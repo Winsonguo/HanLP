@@ -18,8 +18,7 @@ import com.hankcs.hanlp.corpus.util.CustomNatureUtility;
  *
  * @author hankcs
  */
-public enum Nature
-{
+public enum Nature {
     /**
      * 区别语素
      */
@@ -762,6 +761,11 @@ public enum Nature
      */
     begin,
 
+    /**
+     * 自定义:职位头衔
+     */
+    pt,
+
     ;
 
     /**
@@ -770,8 +774,7 @@ public enum Nature
      * @param prefix 前缀
      * @return 是否以该前缀开头
      */
-    public boolean startsWith(String prefix)
-    {
+    public boolean startsWith(String prefix) {
         return toString().startsWith(prefix);
     }
 
@@ -781,8 +784,7 @@ public enum Nature
      * @param prefix 前缀
      * @return 是否以该前缀开头
      */
-    public boolean startsWith(char prefix)
-    {
+    public boolean startsWith(char prefix) {
         return toString().charAt(0) == prefix;
     }
 
@@ -791,8 +793,7 @@ public enum Nature
      *     词性根据开头的几个字母可以判断大的类别
      * @return
      */
-    public char firstChar()
-    {
+    public char firstChar() {
         return toString().charAt(0);
     }
 
@@ -801,14 +802,10 @@ public enum Nature
      * @param name 字符串词性
      * @return Enum词性
      */
-    public static Nature fromString(String name)
-    {
-        try
-        {
+    public static Nature fromString(String name) {
+        try {
             return Nature.valueOf(name);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return null;
         }
     }
@@ -818,14 +815,10 @@ public enum Nature
      * @param name 字符串词性
      * @return Enum词性
      */
-    public static Nature create(String name)
-    {
-        try
-        {
+    public static Nature create(String name) {
+        try {
             return Nature.valueOf(name);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return CustomNatureUtility.addNature(name);
         }
     }
