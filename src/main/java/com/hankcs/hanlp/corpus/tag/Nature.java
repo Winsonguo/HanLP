@@ -761,11 +761,6 @@ public enum Nature {
      */
     begin,
 
-    /**
-     * 自定义:职位头衔
-     */
-    pt,
-
     ;
 
     /**
